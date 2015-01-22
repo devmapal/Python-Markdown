@@ -556,8 +556,8 @@ class ParagraphProcessor(BlockProcessor):
                     if parent.text:
                         parent.text = '%s\n%s' % (parent.text, block)
                     else:
-                        parent.text = block.lstrip()
+                        parent.text = block.lstrip('\n')
             else:
                 # Create a regular paragraph
                 p = util.etree.SubElement(parent, 'p')
-                p.text = block.lstrip()
+                p.text = block.lstrip('\n')
